@@ -1,0 +1,249 @@
+/* ===============================
+   Global Reset + Base Styles
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top, #1a2a6c, #b21f1f, #fdbb2d);
+  min-height: 100vh;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ===============================
+   Header
+================================ */
+.top-header {
+  padding: 3rem 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.header-content {
+  max-width: 900px;
+  margin: auto;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.header-content h1 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.header-content p {
+  font-size: 1.15rem;
+  opacity: 0.95;
+  margin-bottom: 1.2rem;
+}
+
+/* mini tags */
+.mini-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tag {
+  padding: 0.45rem 0.9rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: transform 0.25s ease;
+}
+
+.tag:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* ===============================
+   Main Area
+================================ */
+.main-area {
+  max-width: 1200px;
+  margin: 1.5rem auto 2rem;
+  padding: 0 1rem;
+}
+
+/* Controls section */
+.controls {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.controls h2 {
+  font-size: 2rem;
+  margin-bottom: 0.35rem;
+}
+
+.controls p {
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+/* ===============================
+   Recipe Grid
+================================ */
+.recipe-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+/* ===============================
+   Recipe Card Styles
+================================ */
+.recipe-card {
+  position: relative;
+  border-radius: 18px;
+  padding: 1.5rem;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* COOL glowing border effect */
+.recipe-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ff6fd8, #7cf7ff, #ffe066, #ff7a18);
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.35;
+  transition: opacity 0.3s ease;
+}
+
+/* hover animation */
+.recipe-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+}
+
+.recipe-card:hover::before {
+  opacity: 0.75;
+}
+
+/* title */
+.recipe-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+/* emoji */
+.recipe-emoji {
+  font-size: 2.2rem;
+  display: inline-block;
+  margin-bottom: 0.7rem;
+}
+
+/* meta row */
+.recipe-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.8rem 0;
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+/* description */
+.recipe-card p {
+  font-size: 0.98rem;
+  opacity: 0.92;
+  line-height: 1.6;
+}
+
+/* ===============================
+   Difficulty Badge
+================================ */
+.difficulty {
+  padding: 0.35rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* easy */
+.difficulty.easy {
+  background: rgba(46, 204, 113, 0.25);
+  border: 1px solid rgba(46, 204, 113, 0.7);
+  color: #b6ffcc;
+}
+
+/* medium */
+.difficulty.medium {
+  background: rgba(241, 196, 15, 0.25);
+  border: 1px solid rgba(241, 196, 15, 0.7);
+  color: #fff2b0;
+}
+
+/* hard */
+.difficulty.hard {
+  background: rgba(231, 76, 60, 0.25);
+  border: 1px solid rgba(231, 76, 60, 0.7);
+  color: #ffb6b6;
+}
+
+/* ===============================
+   Category Chip
+================================ */
+.category-chip {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  opacity: 0.95;
+}
+
+/* ===============================
+   Footer
+================================ */
+.footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+/* ===============================
+   Animations
+================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
